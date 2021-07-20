@@ -16,7 +16,7 @@ SMB Shell: `evil-winrm -i 10.10.10.161 -u svc-alfresco -p s3rvice`
 
 SMB Connection: `smbclient \\<IP>\<Share> -U '<Username>'`
 
-Anonymous Access:
+Check For Anonymous Access:
 
 `smbmap -H <IP>`
 
