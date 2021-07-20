@@ -10,4 +10,9 @@ Kerbrute: `./kerbrute userenum -d <Domain Controller> --dc <Target IP> /<Wordlst
 
 GetNPUsers: `sudo python3 GetNPUsers.py <Domain Controller>/<Valid Username> -no-pass`
 
+
+
+add secretsdump
+add ticket attacks
+
  
