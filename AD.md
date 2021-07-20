@@ -14,7 +14,15 @@ If Port 5985 is OPEN, you may be able to access a shell with valid SMB Credentia
 
 SMB Shell: `evil-winrm -i 10.10.10.161 -u svc-alfresco -p s3rvice`
 
-SMB Connection `smbclient \\<IP>\<Share> -U '<Username>'`
+SMB Connection: `smbclient \\<IP>\<Share> -U '<Username>'`
+
+Anonymous Access:
+
+`smbmap -H <IP>`
+
+`smbclient \\\\<IP>\<Share> -N`
+
+`smbclient \\\\<IP>\\<Share> -c 'recurse;ls' -N`
 
 ## Impacket Scripts
 
