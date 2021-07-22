@@ -75,3 +75,6 @@ Import PowerView
 [Kuberos DCSync Attacks Explained](https://www.qomplx.com/kerberos_dcsync_attacks_explained/)
 
 [PowerView 3.0 Tips & Tricks](https://gist.github.com/HarmJ0y/184f9822b195c52dd50c379ed3117993)
+
+
+kuberoasting
