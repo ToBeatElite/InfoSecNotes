@@ -2,7 +2,11 @@
 
 ## Enumeration
 
-Nmap: `sudo nmap -n -sV --script "ldap* and not brute" <IP>`
+Nmap:
+
+`sudo nmap -n -sV --script "ldap* and not brute" <IP>`
+
+`sudo nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse <IP>`
 
 Enum4Linux: `enum4linux <IP>`
 
