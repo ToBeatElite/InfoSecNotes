@@ -1,5 +1,9 @@
-# Hacking Notes
+## Hacking Notes
 
-## [Active Directory](ActiveDirectory.md)
+### Index
 
-## [Password Attcks](PasswordAttacks.md)
+- [Basic Enumeration](Basics.md)
+
+- [Active Directory](ActiveDirectory.md)
+
+- [Password Attacks](PasswordAttacks.md)
