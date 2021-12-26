@@ -19,5 +19,5 @@ AS-REP roasting is a technique that allows retrieving password hashes for users 
 python3 GetNPUsers.py <DOMAIN>/ -dc-ip <IP> -no-pass -usersfile <USERLIST>
 ```
 
-[Roasting AS-REPS](https://www.harmj0y.net/blog/activedirectory/roasting-as-reps/)
-[AS-REP Roasting](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/as-rep-roasting-using-rubeus-and-hashcat)
+- [Roasting AS-REPS](https://www.harmj0y.net/blog/activedirectory/roasting-as-reps/)
+- [AS-REP Roasting](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/as-rep-roasting-using-rubeus-and-hashcat)
