@@ -1,8 +1,6 @@
-## Windows / Active Directory Enumeration
+## General Enumeration
 
-### Important Ports
-
- **SMB - 445**
+**SMB - 445**
 
 With SMB open we can look for shares that have anonymous access enabled, so that we can view any files inside them that may help us move forward.
 
@@ -25,6 +23,18 @@ smbmap -H <IP> -d <DOMAIN> -u <USER> -p <PASS>
 
 Appending ``-c 'recurse;ls' `` to the end of an ``smbclient`` command, will recursivly list every item in the entire share, useful for rapidly going through large shares for information.
 
+**FTP - 21**
+
+The File Transfer Protocol is used to transfer files between clients and a server. The most you can really do with this for enumeration is look for anonymous access.
+
+```bash
+nmap --script ftp-* -p 21 <IP>
+ftp://anonymous:anonymous@<IP> # Using a Browser
+```
+
+## Windows / Active Directory Enumeration
+
+### Important Ports
 
 **LDAP - 389, 636**
 
