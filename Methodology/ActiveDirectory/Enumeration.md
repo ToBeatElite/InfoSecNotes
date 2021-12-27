@@ -67,7 +67,7 @@ querydispinfo # Extensive Information On Users
 
 I could go on and on, but this article is *insanely* good at helping you get information when you have RPC access. 
 
-[Enumerating Active Directory with RPC](https://www.hackingarticles.in/active-directory-enumeration-rpcclient/)
+- [Enumerating Active Directory with RPC](https://www.hackingarticles.in/active-directory-enumeration-rpcclient/)
 
 ### Noteworthy Ports
 
