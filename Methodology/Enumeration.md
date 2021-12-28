@@ -14,10 +14,10 @@ smbmap -H <IP> -u 'invalid' -p 'invalid'
 **Useful Commands**
 
 ```bash
+# SMB Connection
 smbclient \\\\<IP>\\<Share> -N # With No Creds
 smbclient \\\\<IP>\\<SHARE> -U <USER>%<PASS>
-
-# Find Domain Name from LDAP or somthing else; there are plenty of ways.
+# SMB Enumeration with Credentials
 smbmap -H <IP> -d <DOMAIN> -u <USER> -p <PASS> 
 ```
 
@@ -27,9 +27,22 @@ Appending ``-c 'recurse;ls' `` to the end of an ``smbclient`` command, will recu
 
 The File Transfer Protocol is used to transfer files between clients and a server. The most you can really do with this for enumeration is look for anonymous access.
 
+Anonymous FTP Connection
+
 ```bash
-nmap --script ftp-* -p 21 <IP>
-ftp://anonymous:anonymous@<IP> # Using a Browser
+ftp <IP>
+>anonymous
+>anonymous
+```
+
+**Useful FTP Commands**
+
+```bash
+# Download Everything in Directory
+> passive
+> binary
+> prompt off
+> mget *
 ```
 
 ## Windows / Active Directory Enumeration
@@ -59,10 +72,10 @@ rpcclient -u '<USER>' --password='<PASS>' <IP>
 **Useful RPC Commands**
 
 ```bash
-querydominfo # Domain Information
-enumdomusers # All Domain Users
-enumdomgroups # All Domain Groups
-querydispinfo # Extensive Information On Users
+> querydominfo # Domain Information
+> enumdomusers # All Domain Users
+> enumdomgroups # All Domain Groups
+> querydispinfo # Extensive Information On Users
 ```
 
 I could go on and on, but this article is *insanely* good at helping you get information when you have RPC access. 
