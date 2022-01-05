@@ -4,10 +4,11 @@
 
 With SMB open we can look for shares that have anonymous access enabled, so that we can view any files inside them that may help us move forward.
 
-``smbmap`` is a great tool to check what shares you have access to, if any.
+``smbmap`` is a great tool to check what shares you have access to, if any. Try all of these, they can yeild different results
 
 ```bash
 smbmap -H <IP> # With No Creds
+smbmap -H <IP> -u 'invalid'
 smbmap -H <IP> -u 'invalid' -p 'invalid'
 ```
 
