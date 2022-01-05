@@ -12,7 +12,7 @@ smbmap -H <IP> -u 'invalid'
 smbmap -H <IP> -u 'invalid' -p 'invalid'
 ```
 
-**Useful Commands**
+**Useful Enumeration Commands**
 
 ```bash
 # SMB Connection
@@ -24,6 +24,15 @@ smbmap -H <IP> -d <DOMAIN> -u <USER> -p <PASS>
 
 Appending ``-c 'recurse;ls' `` to the end of an ``smbclient`` command, will recursivly list every item in the entire share, useful for rapidly going through large shares for information.
 
+**Useful SMB Commands**
+
+```bash
+# Download Everything in Directory
+
+> prompt off
+> mget *
+```
+
 **FTP - 21**
 
 The File Transfer Protocol is used to transfer files between clients and a server. The most you can really do with this for enumeration is look for anonymous access.
@@ -32,14 +41,15 @@ Anonymous FTP Connection
 
 ```bash
 ftp <IP>
->anonymous
->anonymous
+> anonymous
+> anonymous
 ```
 
 **Useful FTP Commands**
 
 ```bash
 # Download Everything in Directory
+
 > passive
 > binary
 > prompt off
