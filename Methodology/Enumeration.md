@@ -70,6 +70,15 @@ There is an excellent NSE script for ``nmap`` that lets us see all the public in
 nmap -n -sV --script "ldap* and not brute" <IP>
 ```
 
+You can use [ldapdomaindump](https://github.com/dirkjanm/ldapdomaindump) to get an overview of users, groups, computers, policies in the domain. Better results with credentials, rarely is anonymous access allowed.
+
+```bash
+ldapdomaindump <IP>
+
+# With Authentication 
+ldapdomaindump -u '<DOMAIN>\<USER>' -p '<PASS>' <IP> -o ./ldapdump
+```
+
 
 **MSRPC - 135, 593**
 
