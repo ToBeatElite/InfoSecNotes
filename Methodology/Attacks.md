@@ -67,3 +67,18 @@ responder -I <NETWORK INTERFACE>
 
 - [SMB Share – SCF File Attacks](https://pentestlab.blog/2017/12/13/smb-share-scf-file-attacks/)
 - [Stealing Windows Credentials Using Google Chrome](https://www.defensecode.com/whitepapers/Stealing-Windows-Credentials-Using-Google-Chrome.pdf)
+
+**Secrets/Credentials Dumping**
+
+The impacket script ``secretsdump.py`` can be used to extract credentials and secrets from a system. There are 2 main use cases:
+- Dump NTLM hash of local users (remote SAM dump)
+- Extract Domain Credentials via *DC Sync*
+
+There is a lot that can be explained on *how* this works, and  *where* this works; but this is mainly so I can remember tool syntax so I won't bother with going into those details.
+
+```bash
+python3 secretsdump.py <DOMAIN>/<USER>:<PASS>@<IP> -outputfile secretsdump
+```
+
+- [DC Sync Attacks With Secretsdump](https://www.youtube.com/watch?v=QfyZQDyeXjQ)
+- [Secretsdump Demystified](https://medium.com/@benichmt1/secretsdump-demystified-bfd0f933dd9b)
