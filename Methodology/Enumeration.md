@@ -114,3 +114,7 @@ If the service is open and you have a valid pair of credentals you found somwher
 evil-winrm -i <IP> -u '<USER>' -p '<PASS>' # Using Creds
 evil-winrm -i 10.10.10.192 -u '<USER>' -H '<NTML_HASH>' # Using NTML Hash
 ```
+
+**Kerberos - 88**
+
+having Kerberos present means that you can AD Attacks like Kerberoasting or AS REp Roasting; this port should be noted but there is nothing to really enumerate from it.
