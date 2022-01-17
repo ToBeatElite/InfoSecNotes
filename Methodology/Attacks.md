@@ -82,3 +82,11 @@ python3 secretsdump.py <DOMAIN>/<USER>:<PASS>@<IP> -outputfile secretsdump
 
 - [DC Sync Attacks With Secretsdump](https://www.youtube.com/watch?v=QfyZQDyeXjQ)
 - [Secretsdump Demystified](https://medium.com/@benichmt1/secretsdump-demystified-bfd0f933dd9b)
+
+**Username Enumeration**
+
+Enumerate valid usernames using ``kerbrute``. This requires Kerberos to the open.
+
+```bash
+kerbrute userenum -d <DOMAIN> --dc <IP> <USERLIST>
+```
