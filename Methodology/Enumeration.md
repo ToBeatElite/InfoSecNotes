@@ -62,15 +62,26 @@ ftp <IP>
 
 **LDAP - 389, 636**
 
-With LDAP open we may be able to locate resources such as files and devices in a network. You can also find Domain Names and FQDN's (Fully Qualified Domain Name).
-
-There is an excellent NSE script for ``nmap`` that lets us see all the public information available.
+You can query LDAP to get lots of imformation on a Domain. Usernames, Groups, Domain Names, etc etc. Somtimes there are passwords or other confidential information inside the data and you can access it. ``ldapsearch`` is a great tool to make these queries.
 
 ```bash
-nmap -n -sV --script "ldap* and not brute" <IP>
+ldapsearch -x -H ldap://<IP> -b '<BASEDN>'
+
+# Examples
+
+ldapsearch -x -H ldap://10.10.10.182 -b 'DC=cascade,DC=local'
+ldapsearch -x -H ldap://10.10.10.6 -b 'CN=Joe Clark,OU=it,DC=evilcorp,DC=local'
 ```
 
-You can use [ldapdomaindump](https://github.com/dirkjanm/ldapdomaindump) to get an overview of users, groups, computers, policies in the domain. Better results with credentials, rarely is anonymous access allowed.
+These are some other tools you may want to use.
+
+An excellent NSE script for ``nmap`` that lets us see the anonymous information available.
+
+```bash
+nmap -Pn -p 389 -sV --script "ldap* and not brute" <IP>
+```
+
+You can use [ldapdomaindump](https://github.com/dirkjanm/ldapdomaindump) to get an overview of users, groups, computers, policies in the domain. You will get better results with credentials, rarely is anonymous access allowed.
 
 ```bash
 ldapdomaindump <IP>
@@ -78,7 +89,6 @@ ldapdomaindump <IP>
 # With Authentication 
 ldapdomaindump -u '<DOMAIN>\<USER>' -p '<PASS>' <IP> -o ./ldapdump
 ```
-
 
 **MSRPC - 135, 593**
 
