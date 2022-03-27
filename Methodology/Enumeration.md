@@ -122,7 +122,7 @@ If the service is open and you have a valid pair of credentals you found somwher
 
 ```bash
 evil-winrm -i <IP> -u '<USER>' -p '<PASS>' # Using Creds
-evil-winrm -i 10.10.10.192 -u '<USER>' -H '<NTML_HASH>' # Using NTML Hash
+evil-winrm -i 10.10.10.192 -u '<USER>' -H '<NT_HASH>' # Using NT Hash
 ```
 
 **Kerberos - 88**
