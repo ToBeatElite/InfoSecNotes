@@ -7,9 +7,9 @@ With SMB open we can look for shares that have anonymous access enabled, so that
 ``smbmap`` is a great tool to check what shares you have access to, if any. Try all of these, they can yeild different results
 
 ```bash
-smbmap -H <IP> # With No Creds
-smbmap -H <IP> -u 'invalid'
-smbmap -H <IP> -u 'invalid' -p 'invalid'
+smbmap -R -H <IP> # With No Creds
+smbmap -R -H <IP> -u 'invalid'
+smbmap -R -H <IP> -u 'invalid' -p 'invalid'
 ```
 
 **Useful Enumeration Commands**
@@ -19,7 +19,7 @@ smbmap -H <IP> -u 'invalid' -p 'invalid'
 smbclient \\\\<IP>\\<Share> -N # With No Creds
 smbclient \\\\<IP>\\<SHARE> -U <USER>%<PASS>
 # SMB Enumeration with Credentials
-smbmap -H <IP> -d <DOMAIN> -u <USER> -p <PASS> 
+smbmap -R -H <IP> -d <DOMAIN> -u <USER> -p <PASS> 
 ```
 
 Appending ``-c 'recurse;ls' `` to the end of an ``smbclient`` command, will recursivly list every item in the entire share, useful for rapidly going through large shares for information.
@@ -127,4 +127,4 @@ evil-winrm -i 10.10.10.192 -u '<USER>' -H '<NT_HASH>' # Using NT Hash
 
 **Kerberos - 88**
 
-having Kerberos present means that you can AD Attacks like Kerberoasting or AS REp Roasting; this port should be noted but there is nothing to really enumerate from it.
+having Kerberos present means that its a DC. you can do AD Attacks like Kerberoasting or AS REP Roasting; this port should be noted but there is nothing to really enumerate from it.
