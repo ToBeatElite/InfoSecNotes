@@ -229,8 +229,10 @@ Things to do once you've gained a shell inside a host, with intent to pivot forw
 
 **Scenario 1: Get Access to Service 2 Hosts Away**
 
-**Scenario 2: Receive Revshell through a Host**
+**Scenario 2: Receive Revshell through 2 Hosts**
+<details>
+    <summary>Visual</summary>
+    <img src="https://github.com/ToBeatELIT3/InfoSecNotes/blob/main/Methodology/Images/fig1.png">
+</details>
 
-ATTACKER MACHINE -> 10.10.10.10
-
-
+In this case, we have RCE on
