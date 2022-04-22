@@ -229,7 +229,11 @@ Things to do once you've gained a shell inside a host, with intent to pivot forw
 
 The multiple IP's in the image represent different network interfaces.
 
-**Scenario 1: Get Access to Service 2 Hosts Away**
+**Scenario 1: Get Access to Service 3 Hosts Away**
+<details>
+    <summary>Visual</summary>
+    <img src="https://github.com/ToBeatELIT3/InfoSecNotes/blob/main/Methodology/Images/fig2.png">
+</details>
 
 **Scenario 2: Receive Revshell through 2 Hosts**
 <details>
