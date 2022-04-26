@@ -214,7 +214,7 @@ Things to do once you've gained a shell inside a host, with intent to pivot forw
     - ``for i in $(seq 1 254); do (ping -c 1 X.X.X.$i | grep "bytes from" | cut -d':' -f1 | cut -d' ' -f4 &); done``
     - nmap works aswell: ``./nmap -sP X.X.X.X/16``.
     - Use nmap to see if you can access any new services on previous hosts from the "inside" of the network.
-  
+    - check for recent connections. ``arp -a``
 - Enumerate new hosts:
     - Use nmap via upload, or establish a socks proxy to the host.
     - nmap will run faster if its uploaded, socks proxy will slow it down.
