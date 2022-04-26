@@ -14,6 +14,9 @@ Notes I've taken while doing the [Containers & Pivoting Track](https://app.hackt
     - lets us forward ports
     - lets us catch incoming shells
 
+- **[Static Netcat](https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/ncat)**
+    - you know what it does
+
 - **[Chisel](https://github.com/jpillora/chisel/releases)**
     - lets us create a client for our Socks Proxies
 
@@ -166,6 +169,10 @@ Listening for reverse shells or anything like that. Once you're a few hops insid
 
 ./socat tcp-listen:2956 stdout
 ```
+
+**Netcat**
+
+You know how to do it.
 
 ---
 
