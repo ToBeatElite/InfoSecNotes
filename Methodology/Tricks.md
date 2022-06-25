@@ -1,4 +1,4 @@
-### bash reverse shell from a php 
+### bash reverse shell from a php command thing
 
 When you have one of these uploaded:
 
