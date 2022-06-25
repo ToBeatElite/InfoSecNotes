@@ -1,6 +1,8 @@
 ## InfoSec Notes & Writeups
 
-repos like these are doomed to be depreceated
-this is for my *actual* notes i take, *when* i need to take them
+Repos like these are doomed to be depreceated. This repo is a place for the *actual* notes I take, for *when* I need to take them, So I can reference them easily. Maybe you'll find somthing Helpful in it, idk.
 
-if you want a repo full of tricks & shit, thats more complete. might i reccomend ![PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/)
+If your looking for a repo with thorough reference notes on general InfoSec things, [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/) and [Cheatsheet-God](https://github.com/OlivierLaflamme/Cheatsheet-God) are really good.
+
+- ToBeatElite
+
