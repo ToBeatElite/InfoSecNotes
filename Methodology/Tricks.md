@@ -42,3 +42,8 @@ smbserver.py <SHARENAME> <LOCALPATH>
 smbserver.py POSTEXP /home/tobeatelite/ctf/tools/privesc
 
 ```
+
+Meterpreter auto migrate
+```
+meterpreter > run post/windows/manage/migrate
+```
