@@ -47,3 +47,9 @@ Meterpreter auto migrate
 ```
 meterpreter > run post/windows/manage/migrate
 ```
+
+enter docker container 
+
+```
+docker exec -it <container_name> bash
+```
