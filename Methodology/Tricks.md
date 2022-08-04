@@ -53,3 +53,14 @@ enter docker container
 ```
 docker exec -it <container_name> bash
 ```
+
+rsync list
+```
+rsync --list-only -a rsync://unbalanced.htb/
+```
+
+rsync file getter things
+```
+rsync -a rsync://unbalanced.htb/conf_backups conf_backups
+rsync -a rsync://<HOST>/<DIR> <OUTPUT_DIR>
+```
