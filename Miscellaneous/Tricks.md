@@ -64,3 +64,8 @@ rsync file getter things
 rsync -a rsync://unbalanced.htb/conf_backups conf_backups
 rsync -a rsync://<HOST>/<DIR> <OUTPUT_DIR>
 ```
+
+remove comments from file
+```
+cat config.yml | grep -vE "^#" | grep .
+```
