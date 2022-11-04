@@ -1,1 +1,1 @@
-<?php system("whoami"); ?>
+<?php echo shell_exec("id"); ?>
